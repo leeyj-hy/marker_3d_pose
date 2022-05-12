@@ -1,6 +1,6 @@
 <launch>
   <node name="usb_cam" pkg="usb_cam" type="usb_cam_node" output="screen" >
-    <param name="video_device" value="/dev/video2" />
+    <param name="video_device" value="/dev/video0" />
     <param name="image_width" value="640" />
     <param name="image_height" value="480" />
     <param name="pixel_format" value="yuyv" />
@@ -45,5 +45,11 @@
   </node>
 
   <node pkg="marker_3d_pose" name="marker_3d_pose" type="marker_3d_pose" output="screen">
+  </node>
+  <node pkg="marker_pose_server" name="marker_pose_server" type="marker_pose_server" output="screen">
+  </node>
+  <node pkg="omo_pos_control" name="omo_pos_control" type="omo_pos_control" output="screen">
+  </node>
+  <node pkg="omo_approach" name="omo_approach" type="omo_approach" output="screen">
   </node>
 </launch>
